@@ -1,0 +1,63 @@
+@import "./card.css";
+@import "./bio.css";
+@import "./top-bottom.css";
+
+body{
+    background: wheat;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-areas: 
+        "navlinks profile";
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery{
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 920px) {
+    .content{
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+        grid-template-areas: 
+            "bio card-area recents";
+        gap: 50px 25px;
+    }
+    
+    .gallery{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-areas: 
+            "card-img1 card-img2 card-img3";
+        gap: 50px 20px;
+    }
+
+    .recents{
+        height: 500px;
+        margin: 10px;
+    }
+
+    .bio{
+        height: 500px;
+        margin: 10px;
+    }
+
+}

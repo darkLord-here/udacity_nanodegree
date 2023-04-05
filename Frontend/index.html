@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>My Personal Blog</title>
+        <link href="css/style.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>My Personal Blog</h1>
+                <div class="nav">
+                    <h3 class="navlinks">Daily Journal</h3>
+                    <h3 class="profile">User</h3>
+                </div>
+            </div>
+            <div class="gallery">
+                <div class="card-img" id="card-img1">
+                    <a href="static/post.html">    
+                        <figure>
+                            <img src="images/OIP.jpg" alt="post 1 by author 1"/> <br/>
+                            <figcaption>Post 1 by Author 1</figcaption>
+                        </figure>
+                    </a>
+                    <div class="share-btns">
+                        <button class="twitter" onclick="window.location.href='https://twitter.com/share?url=http://localhost:8080/static/post.html&text=Checkout this post!&via=Test'">Twitter</button>
+                        <button class="facebook" onclick="window.location.href='https://www.facebook.com/sharer/sharer.php?u=http://localhost:8080/static/post.html'">Facebook</button>
+                        <button class="linkedin" onclick="window.location.href='https://www.linkedin.com/shareArticle?url=http://localhost:8080/static/post.html&title=Lorem Ipsum!!'">LinkedIn</button>
+                    </div>
+                </div>
+                <div class="card-img" id="card-img2">
+                    <a href="static/recent1.html">
+                        <figure>
+                            <img src="images/OIP (1).jpg" alt="post 1 by author 1"/> <br/>
+                            <figcaption>Post 2 by Author 2</figcaption>
+                        </figure>
+                    </a>
+                    <div class="share-btns">
+                        <button class="twitter" onclick="window.location.href='https://twitter.com/share?url=http://localhost:8080/static/recent1.html&text=Checkout this post!&via=Test'">Twitter</button>
+                        <button class="facebook" onclick="window.location.href='https://www.facebook.com/sharer/sharer.php?u=http://localhost:8080/static/recent1.html'">Facebook</button>
+                        <button class="linkedin" onclick="window.location.href='https://www.linkedin.com/shareArticle?url=http://localhost:8080/static/recent1.html&title=Amazing Part 1'">LinkedIn</button>
+                    </div>
+                </div>
+            </div>
+            <button onclick="window.location.href='static/posts.html'">
+                Explore more
+            </button>
+            <div class="footer">
+                &copy; Testing Project
+            </div>
+        </div>
+    </body>
+</html>

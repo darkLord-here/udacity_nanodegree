@@ -1,0 +1,62 @@
+.bio{
+    background-color: aliceblue;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 5px;
+    grid-area: bio;
+    height: auto;
+    margin: 10px;
+}
+
+.recents{
+    background-color: aliceblue;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 5px;
+    grid-area: recents;
+    height: auto;
+    margin: 10px;
+}
+
+.profile{
+    direction: rtl;
+    grid-area: profile;
+}
+
+.navlinks{
+    grid-area: navlinks;
+}
+
+button{
+    background-color: cyan;
+    color: blue;
+    margin: 10px
+}
+
+.twitter{
+    background: #55acee;
+    color: azure;
+    grid-area: twitter;
+}
+
+.facebook{
+    background: #3B5998;
+    color: azure;
+    grid-area: facebook;
+}
+
+.linkedin{
+    background: #4875B4;
+    color: azure;
+    grid-area: linkedin;
+}
+
+.display-pic{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.share-btns{
+    display: flex;
+    width: 80%;
+    gap: 1px;
+}
