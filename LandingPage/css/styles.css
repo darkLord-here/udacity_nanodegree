@@ -88,6 +88,24 @@ section {
     transition: ease 0.3s all;
 }
 
+li a {
+	text-decoration: none;
+	padding: 10px;
+	cursor: pointer;
+}
+
+a,
+a:visited,
+a:active {
+	color: inherit;
+}
+
+/* Active Section */
+.active {
+	background-color: #02b3e4;
+	font-weight: bold;
+}
+
 /* Header Styles */
 .page__header {
     background: #fff;
