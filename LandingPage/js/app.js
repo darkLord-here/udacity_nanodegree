@@ -1,15 +1,43 @@
 const nav = document.getElementById('navbar__list');
 const sections = document.getElementsByTagName('section');
 let sectionPositions = []
+let selectedSection = ''
 
 /**
  * End Global Variables
  * Start Helper Functions
  * 
 */
+function refreshState(idx){
+    for (let i = 0; i < sections.length; i++) {
+		if (idx === i) {
+            // console.log(idx, i)
+			document.querySelector(`#menu_link${idx + 1}`).classList.add("active");
+			document.querySelector(`#section${idx + 1}`).classList.add("your-active-class");
+		} else {
+			document.querySelector(`#menu_link${i + 1}`).removeAttribute("class");
+			document.querySelector(`#section${i + 1}`).removeAttribute("class");
+		}
+	}
+}
+
+
 function scrollOffset(x, y){
     window.scrollTo(x, y);
 }
+
+function jumpToSection(event){
+    event.preventDefault();
+    selectedSection = '';
+    selectedSection = event.target.innerText;
+    // console.log(event)
+    let idx = Array.from(sections).findIndex((element) => element.getAttribute('data-nav') === selectedSection);
+    // console.log(`selected ${idx}`);
+    document.querySelector(`[data-nav='${selectedSection}']`).scrollIntoView({ behavior: "instant", block: "start", inline: "nearest" });
+
+    refreshState(idx);
+}
+
 
 // Create DocumentFragment to avoid multiple repaint and reflows
 let tempDocument = new DocumentFragment();
@@ -26,7 +54,8 @@ for(let [index,section] of Array.from(sections).entries()){
     tag.setAttribute("class", "menu_link");
 
     tag.style.color = 'black';
-    tag.innerHTML = `<a onClick="scrollOffset(${offset.x}, ${offset.y})">${name}</a>`
+    tag.innerHTML = `<p>${name}</p>`
+    // tag.innerHTML = `<a onClick="scrollOffset(${offset.x}, ${offset.y})">${name}</a>`
     
     // Add the element to Document Fragment
     tempDocument.appendChild(tag);
@@ -40,22 +69,15 @@ nav.appendChild(tempDocument);
 
 
 // Scroll to anchor ID using scrollTO event
-document.addEventListener('scroll', function(event){
+document.addEventListener('scroll', ()=>{
     sectionPositions = []
     Array.from(sections).forEach((section)=> sectionPositions.push(section.getBoundingClientRect().top)+30);
-    let idx = sectionPositions.findIndex((element) => element > 0);
-    console.log(idx)
-    for (let i = 0; i < sections.length; i++) {
-		if (idx === i) {
-			document.querySelector(`#menu_link${idx + 1}`).classList.add("active");
-			document.querySelector(`#section${idx + 1}`).classList.add("your-active-class");
-		} else {
-			document.querySelector(`#menu_link${i + 1}`).removeAttribute("class");
-			document.querySelector(`#section${i + 1}`).removeAttribute("class");
-		}
-	}
-});
+    let idx = sectionPositions.findIndex((element) => element >= 0);
+    refreshState(idx);
+}, true);
 
 
+// Jump to section
+nav.addEventListener('click', jumpToSection, true);
 
 
