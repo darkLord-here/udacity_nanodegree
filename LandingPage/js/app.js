@@ -33,7 +33,7 @@ function jumpToSection(event){
     // console.log(event)
     let idx = Array.from(sections).findIndex((element) => element.getAttribute('data-nav') === selectedSection);
     // console.log(`selected ${idx}`);
-    document.querySelector(`[data-nav='${selectedSection}']`).scrollIntoView({ behavior: "instant", block: "start", inline: "nearest" });
+    document.querySelector(`[data-nav='${selectedSection}']`).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 
     refreshState(idx);
 }
